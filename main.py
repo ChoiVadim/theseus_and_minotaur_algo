@@ -5,6 +5,7 @@ from config import *
 from helpers import *
 
 
+@timer
 def solve_maze(maze, theseus_start, minotaur_start, exit_pos):
     directions = {"L": (0, -1), "R": (0, 1), "U": (-1, 0), "D": (1, 0), "S": (0, 0)}
     moves = deque([(theseus_start, minotaur_start, "")])
@@ -54,9 +55,7 @@ def solve_maze(maze, theseus_start, minotaur_start, exit_pos):
 
 def main():
     theseus_start, minotaur_start, exit_pos = get_positions(maze_pos7)
-
-    res = solve_maze(maze7, theseus_start, minotaur_start, exit_pos)
-    print(f"{res=}")
+    print(solve_maze(maze7, theseus_start, minotaur_start, exit_pos))
 
 
 if __name__ == "__main__":

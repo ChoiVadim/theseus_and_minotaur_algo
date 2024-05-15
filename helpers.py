@@ -60,3 +60,19 @@ def minotaur_move(maze, minotaur_pos, theseus_pos):
             x += 1 if x < tx else -1
 
     return (x, y)
+
+
+import time
+
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        duration = time.perf_counter() - start
+        wrapper.total_time += duration
+        print(f"Execution time: {duration:.6}")
+        return result
+
+    wrapper.total_time = 0
+    return wrapper
