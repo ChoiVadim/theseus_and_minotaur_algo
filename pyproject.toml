@@ -1,0 +1,9 @@
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    mazes.py
+    | \.vscode
+    | __pycache__
+)/
+'''
